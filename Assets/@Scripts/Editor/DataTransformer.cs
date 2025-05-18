@@ -34,7 +34,10 @@ public class DataTransformer : EditorWindow
     public static void ParseExcelDataToJson()
     {
         // Example
-        ParseExcelDataToJson<ChildDataLoader, ChildData>("Child");
+        // ParseExcelDataToJson<ChildDataLoader, ChildData>("Child");
+
+        ParseExcelDataToJson<PlayerDataLoader, PlayerData>("Player");
+        ParseExcelDataToJson<EnemyDataLoader, EnemyData>("Enemy");
 
         Debug.Log("DataTransformer Completed");
     }

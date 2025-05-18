@@ -61,7 +61,7 @@ public class GameManager
             return;
 
         // To Do : 패치에 Data들을 대처할 수 있도록 수정 -> Version 정보를 참조
-        var children = Managers.Data.ChildDataDic.Values.ToList();
+        /*var children = Managers.Data.ChildDataDic.Values.ToList();
         foreach (ChildData child in children)
         {
             ChildSaveData childSaveData = new ChildSaveData()
@@ -70,7 +70,7 @@ public class GameManager
             };
 
             SaveData.Children.Add(childSaveData);
-        }
+        }*/
     }
 
     public void SaveGame()

@@ -51,10 +51,32 @@ public class Define
     }
     #endregion
 
+    public enum EStageState
+    {
+        None,
+
+        Start,
+        Battle,
+        Move,
+        Over,
+        Clear,
+    }
+
     public enum EObjectType
     {
         None,
-        TempType,
+
+        Player,
+        Enemey,
+    }
+
+    public enum ECreatureState
+    {
+        None,
+
+        Idle,
+        Move,
+        DoSkill,
     }
 
     public enum ELayer
@@ -65,5 +87,6 @@ public class Define
         Dummy1 = 3,
         Water = 4,
         UI = 5,
+        Creature = 6,
     }
 }

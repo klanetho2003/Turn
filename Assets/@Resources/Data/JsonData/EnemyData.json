@@ -1,0 +1,9 @@
+﻿{
+  "EnemyDatas": [
+    {
+      "TemplateDataId": 20,
+      "CreatureNameId": "Temp_Enemy",
+      "MaxHp": 100
+    }
+  ]
+}

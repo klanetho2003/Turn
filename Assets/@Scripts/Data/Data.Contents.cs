@@ -43,5 +43,50 @@ namespace Data
     }
     #endregion
 
+    public class CreatureData
+    {
+        public int TemplateDataId;
+        public string CreatureNameId;
+        public int MaxHp;
+    }
 
+    #region Player Data
+    [Serializable]
+    public class PlayerData : CreatureData
+    {
+        
+    }
+
+    [Serializable]
+    public class PlayerDataLoader : ILoader<int, PlayerData>
+    {
+        public List<PlayerData> PlayerDatas = new List<PlayerData>();
+        public Dictionary<int, PlayerData> MakeDict()
+        {
+            Dictionary<int, PlayerData> dataDic = new Dictionary<int, PlayerData>();
+            foreach (PlayerData data in PlayerDatas)
+                dataDic.Add(data.TemplateDataId, data);
+            return dataDic;
+        }
+    }
+    #endregion
+
+    [Serializable]
+    public class EnemyData : CreatureData
+    {
+
+    }
+
+    [Serializable]
+    public class EnemyDataLoader : ILoader<int, EnemyData>
+    {
+        public List<EnemyData> EnemyDatas = new List<EnemyData>();
+        public Dictionary<int, EnemyData> MakeDict()
+        {
+            Dictionary<int, EnemyData> dataDic = new Dictionary<int, EnemyData>();
+            foreach (EnemyData data in EnemyDatas)
+                dataDic.Add(data.TemplateDataId, data);
+            return dataDic;
+        }
+    }
 }

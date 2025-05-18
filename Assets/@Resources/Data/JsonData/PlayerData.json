@@ -1,0 +1,9 @@
+﻿{
+  "PlayerDatas": [
+    {
+      "TemplateDataId": 10,
+      "CreatureNameId": "Temp_Player",
+      "MaxHp": 100
+    }
+  ]
+}

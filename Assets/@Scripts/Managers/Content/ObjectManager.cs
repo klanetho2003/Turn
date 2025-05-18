@@ -6,8 +6,8 @@ using static Define;
 
 public class ObjectManager
 {
-    public BaseController TempObject { get; private set; }
-    public HashSet<BaseController> TempObejects { get; } = new HashSet<BaseController>();
+    public Player Player { get; private set; }
+    public HashSet<Enemy> Enemeys { get; } = new HashSet<Enemy>();
 
     public GameObject SpawnGameObject(Vector3 position, string prefabName)
     {
@@ -26,17 +26,17 @@ public class ObjectManager
 
         BaseController obj = go.GetComponent<BaseController>();
 
-        if (obj.ObjectType == EObjectType.None)
+        if (obj.ObjectType == EObjectType.Player)
         {
-            BaseController tempObject = go.GetComponent<BaseController>();
-            TempObject = tempObject;
-            // TempObject.SetInfo(templateID);
+            Player player = go.GetComponent<Player>();
+            Player = player;
+            player.SetInfo(templateID);
         }
-        else if (obj.ObjectType == EObjectType.TempType)
+        else if (obj.ObjectType == EObjectType.Enemey)
         {
-            BaseController temp = go.GetComponent<BaseController>();
-            TempObejects.Add(temp);
-            // temp.SetInfo(templateID);
+            Enemy enemey = go.GetComponent<Enemy>();
+            Enemeys.Add(enemey);
+            enemey.SetInfo(templateID);
         }
 
         return obj as T;
@@ -50,15 +50,15 @@ public class ObjectManager
 
         EObjectType objectType = obj.ObjectType;
 
-        if (obj.ObjectType == EObjectType.None)
+        if (obj.ObjectType == EObjectType.Player)
         {
-            BaseController player = obj.GetComponent<BaseController>();
-            TempObject = null;
+            Player player = obj.GetComponent<Player>();
+            Player = null;
         }
-        else if (obj.ObjectType == EObjectType.TempType)
+        else if (obj.ObjectType == EObjectType.Enemey)
         {
-            BaseController temp = obj.GetComponent<BaseController>();
-            TempObejects.Remove(temp);
+            Enemy enemey = obj.GetComponent<Enemy>();
+            Enemeys.Remove(enemey);
         }
 
         // To Pool
@@ -73,7 +73,7 @@ public class ObjectManager
 
     public void DespawnAllTemps()
     {
-        var temps = TempObejects.ToList();
+        var temps = Enemeys.ToList();
 
         foreach (var temp in temps)
             Managers.Object.Despawn(temp);

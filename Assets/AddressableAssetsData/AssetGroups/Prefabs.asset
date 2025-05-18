@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Data
+  m_Name: Prefabs
   m_EditorClassIdentifier: 
-  m_GroupName: Data
-  m_GUID: b7d01224da6bf96468763cd87eecc497
+  m_GroupName: Prefabs
+  m_GUID: 08f94390c1529f84da1d36b10ebd06a4
   m_SerializeEntries:
-  - m_GUID: 062f6708316ea2945bff46aa98d3f615
-    m_Address: EnemyData
+  - m_GUID: 327d023571251504980a5aba94201b18
+    m_Address: Player
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 120931aa9b1b05441a6a87038fb30eb5
-    m_Address: PlayerData
+  - m_GUID: eabe6c6faf97d1044a3994103d3aed59
+    m_Address: Enemy
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -31,5 +31,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 048622a9cdb6b5e4499f42640812c0b8, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: ba54e597e68b58645a4b9442a87c9fd3, type: 2}
-    - {fileID: 11400000, guid: ad4cf36cc4c26d247b287640605e3a95, type: 2}
+    - {fileID: 11400000, guid: 5ac01e6bd89a9324e9140fa41ce94670, type: 2}
+    - {fileID: 11400000, guid: c012b223cf0f95649962865d8478d822, type: 2}

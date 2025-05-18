@@ -10,9 +10,11 @@ public class Managers : MonoBehaviour
     #region Contents
     GameManager _game = new GameManager();
     ObjectManager _obj = new ObjectManager();
+    TurnManager _turn = new TurnManager();
 
     public static GameManager Game { get { return Instance?._game; } }
     public static ObjectManager Object { get { return Instance?._obj; } }
+    public static TurnManager Turn { get { return Instance?._turn; } }
     #endregion
 
     #region Cores
